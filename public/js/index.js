@@ -40,37 +40,41 @@
     document.body.style.backgroundImage = 'url(' + src + ')';
   }
 
+  // const prefix = str =>  _.partial(_.add, str);
+
+  /*
+    makeImageNames
+    @param otherExts {Object} - { 1: '.jpeg', 11: '.png', 17: '.png'}
+   */ 
+  function makeImageNames(count, prefix, ext = '.jpg', otherExts = {}) {
+    return _.times(count)
+      .map(n => n + 1)
+      .map(n => _.padStart(n, 2, '0'))
+      .map(str => str + (_.isUndefined(otherExts[Number(str)]) ? ext : otherExts[Number(str)]))
+      .map(str => prefix + str);
+  }
+
   const changeBackground = (function () {
     let imgs = [
-      'qq-1.jpg', 'qq-2.jpg', 'qq-3.jpg'
+      'red_love_heart_tree-wide.jpg', 
     ];
 
-    const prefix = str =>  _.partial(_.add, str);
-
-    // @param otherExts {Object} - { 1: '.jpeg', 11: '.png', 17: '.png'}
-    function makeImageNames(count, prefix, ext = '.jpg', otherExts = {}) {
-      return _.times(count)
-        .map(n => n + 1)
-        .map(n => _.padStart(n, 2, '0'))
-        .map(str => str + (_.isUndefined(otherExts[Number(str)]) ? ext : otherExts[Number(str)]))
-        .map(str => prefix + str);
-    }
+    let qq = makeImageNames(3, 'qq-');
 
     let celebrities = [];
-    const 新垣结衣 = makeImageNames(4, '新垣结衣-');
-    celebrities = celebrities.concat(新垣结衣)
-      .map(prefix('celebrities/'));
+    const aragakiYui = makeImageNames(4, 'AragakiYui-');
+    celebrities = celebrities.concat(aragakiYui);
     
-    const frozen = makeImageNames(4, '冰雪奇缘-');
-    const dramas = [].concat(frozen).map(prefix('dramas/'));
+    const frozen = makeImageNames(4, 'frozen-');
+    const dramas = [].concat(frozen);
 
-    const summerPalace = makeImageNames(5, '颐和园-');
-    const scene = [].concat(summerPalace).map(prefix('scene/'));
-    imgs = imgs.concat(celebrities, dramas, scene);
+    const summerPalace = makeImageNames(5, 'SummerPalace-');
+    const scene = [].concat(summerPalace);
 
+    imgs = imgs.concat(qq, celebrities, dramas, scene);
     console.log('imgs length', imgs.length);
-
     const imgCount = imgs.length;
+
     const day = new Date().getDate();
 
     function varyBackgroundImageByDay() {
@@ -211,26 +215,12 @@
       },
     });
 
-    // [optionSbmtTo, getSearchHost] pulic to sugar.js
-    // [changeBackground, setBackground]  pulic to calendar.js
-    var siteTab = siteTab || {};
-    siteTab.submit = optionSbmtTo;
-    siteTab.getSearchHost = getSearchHost;
-    siteTab.changeBackground = changeBackground;
-    siteTab.setBackground = setBackground;
-
-    win.legend.siteTab = siteTab;
-
-    // 显示或隐藏主面板 begin
     const searchBar = $('#searchBar');
 
-    // const oneHour = 8 * 1000;
     win.setInterval(() => {
       console.log('change background at %s', new Date().toLocaleString());
       changeBackground(false);
     }, BACKGROUND_CHANGE_INTERVAL);
-
-    // 显示或隐藏主面板 end
 
     // - begin hover input hide titles and select
     searchBar.children('tbody').on({
@@ -241,6 +231,15 @@
         searchBar.removeClass('input-hovered');
       }
     })
-    // - end
+
+    // [optionSbmtTo, getSearchHost] pulic to sugar.js
+    // [changeBackground, setBackground]  pulic to calendar.js
+    var siteTab = siteTab || {};
+    siteTab.submit = optionSbmtTo;
+    siteTab.getSearchHost = getSearchHost;
+    siteTab.changeBackground = changeBackground;
+    siteTab.setBackground = setBackground;
+
+    win.legend.siteTab = siteTab;
   }());
 }(window, document, jQuery));
