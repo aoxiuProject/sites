@@ -43,7 +43,7 @@
   // const prefix = str =>  _.partial(_.add, str);
 
   /*
-    makeImageNames
+    makeImageNames - makeImageNames(3, 'qq-') 返回 ['qq-01.jpg', 'qq-02.jpg', 'qq-03.jpg']
     @param otherExts {Object} - { 1: '.jpeg', 11: '.png', 17: '.png'}
    */ 
   function makeImageNames(count, prefix, ext = '.jpg', otherExts = {}) {
