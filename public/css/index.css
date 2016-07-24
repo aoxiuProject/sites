@@ -1,37 +1,37 @@
 body, p, dl, dd, table, td, th, img, form, div, ol, ul, li, input, h4, figure, select {
-	margin:0;
-	padding:0;
+  margin:0;
+  padding:0;
 }
 
 body {
-	font-family: '微软雅黑', 'Microsoft YaHei', 'Malgun Gothic';
-	transition: background 1s;
-	background: fixed 50% 40% / cover;
+  font-family: '微软雅黑', 'Microsoft YaHei', 'Malgun Gothic';
+  transition: background 1s;
+  background: fixed 50% 40% / cover;
 }
 
 a[href^=http] {
-	cursor: url('../images/common/hand_white.cur'), pointer;
+  cursor: url('../images/common/hand_white.cur'), pointer;
 }
 
 ol, ul, li {list-style: none;}
 em {font-style: normal;font-weight: bold;}
 
 @font-face {
-	font-family: 'RTWSYueGoTrial-Regular';
-	src: url('../font/RTWSYueGoTrial-Regular.otf');
+  font-family: 'RTWSYueGoTrial-Regular';
+  src: url('../font/RTWSYueGoTrial-Regular.otf');
 }
 
 .font-web {
-	font-family: 'RTWSYueGoTrial-Regular';
+  font-family: 'RTWSYueGoTrial-Regular';
 }
 .font-kor {
-	font-family: '微软雅黑', 'Microsoft YaHei', 'Malgun Gothic';
+  font-family: '微软雅黑', 'Microsoft YaHei', 'Malgun Gothic';
 }
 .font-consolas {
-	font-family: 'Consolas';
+  font-family: 'Consolas';
 }
 .font-wryh {
-	font-family: '微软雅黑', 'Microsoft YaHei';
+  font-family: '微软雅黑', 'Microsoft YaHei';
 }
 
 
@@ -40,7 +40,7 @@ table td {padding:0;}
 a {text-decoration:none;}
 .fr {float:right; display:inline;}
 .inline-block {
-	display: inline-block;
+  display: inline-block;
 }
 .cur { color: #000; }
 
@@ -50,19 +50,19 @@ a {text-decoration:none;}
 /* light-blue: E0E6EC */
 .bg {color:purple; cursor:pointer;}
 .tabs {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 /* table in header */
 .headers {
   width: 72%;
-	margin: 2em auto;
-	font-size: 20px;
+  margin: 2em auto;
+  font-size: 20px;
 }
 
 .titles {
-	font-weight: bold;
-	font-family:'Microsoft Jhenghei';
+  font-weight: bold;
+  font-family:'Microsoft Jhenghei';
 }
 .headers a {color:#004398;}
 .headers a:hover {text-decoration:underline; color:#B33035; }
@@ -80,239 +80,245 @@ a {text-decoration:none;}
 
 .titles,
 .style-select {
-	transition: visibility 500ms;
-	visibility: hidden;
+  transition: visibility 500ms;
+  visibility: hidden;
 }
 
 .input-hovered .titles,
 .input-hovered .style-select {
-	visibility: visible;
+  visibility: visible;
 }
 
 .search-input {
-	border: 0;
+  border: 0;
   width: 710px;
-	height: 30px;
-	font-size: 16px;
-	padding-left: 6px;
-	background-color: rgba(255, 255, 255, 0.23);
+  height: 30px;
+  font-size: 16px;
+  padding-left: 6px;
+  background-color: rgba(255, 255, 255, 0.23);
 }
 
 .alert-danger {
-	border-color: #f00;
+  border-color: #f00;
 }
 
 .headers select {
-	font-size: 17px;
-	color: blue;
+  font-size: 17px;
+  color: blue;
 }
 
 .style-select {
-	-webkit-appearance: button;
-	width: 110px;
-	border: 1px solid #AAA;
-	border-radius: 2px;
-	padding: 4px 3px 2px 3px;
-	background: url(../images/common/down-arrow1.png) 93% center no-repeat, linear-gradient(#fff, #eee);
-	box-shadow: 0px 1px 5px #CCC;
+  -webkit-appearance: button;
+  width: 110px;
+  border: 1px solid #AAA;
+  border-radius: 2px;
+  padding: 4px 3px 2px 3px;
+  background: url(../images/common/down-arrow1.png) 93% center no-repeat, linear-gradient(#fff, #eee);
+  box-shadow: 0px 1px 5px #CCC;
 }
 
 .hidden {
-	display: none;
+  display: none;
 }
 
 .sugar {
-	position: absolute;
+  position: absolute;
   width: 716px;
-	background: rgba(255, 255, 255, 0.85);
-	border: 1px solid #817F82;
-	border-top-width: 0;
-	border-radius: 0 0 5px 5px;
-	font-size: 14px;
-	box-shadow: 0px 15px 24px rgba(0, 0, 0, 0.45);
-	z-index: 2;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #817F82;
+  border-top-width: 0;
+  border-radius: 0 0 5px 5px;
+  font-size: 14px;
+  box-shadow: 0px 15px 24px rgba(0, 0, 0, 0.45);
+  z-index: 2;
 }
 
 .sg-minHeight {
-	min-height: 220px;
+  min-height: 220px;
 }
 
 .sugar ul {
-	float: left;
-	width: 100%; /*294px*/
+  float: left;
+  width: 100%; /*294px*/
 }
 .sugar li {
-	line-height: 28px;
-	padding: 0 0 0 8px;
-	cursor: default;
+  line-height: 28px;
+  padding: 0 0 0 8px;
+  cursor: default;
 }
 .sugar .cur {
-	background-color: #C7DCF1;
+  background-color: #C7DCF1;
 }
 .sugar .cur .panel {
-	display: block;
+  display: block;
 }
 .sugar .panel{
-	background: #C7DCF1;
-	width: 206px;
-	font-size: 12px;
-	/*line-height: 20px;*/
-	float: right;
-	position: absolute;
-	top: 0;
-	right: 0;
-	height: 100%;
-	display: none;
+  background: #C7DCF1;
+  width: 206px;
+  font-size: 12px;
+  /*line-height: 20px;*/
+  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  display: none;
 }
 .sugar b {
-	color: #0B5AAA;
+  color: #0B5AAA;
 }
 .sugar .top1 {
-	background: #ff6666; /* # 鲜橘红色 E03835 */
+  background: #ff6666; /* # 鲜橘红色 E03835 */
 }
 .sugar .top2 {
-	background: #FF8547; /* 浅橘红色*/
+  background: #FF8547; /* 浅橘红色*/
 }
 .sugar .top3 {
-	background: #FFAC38; /* 浅浅橘红色*/
+  background: #FFAC38; /* 浅浅橘红色*/
 }
 .rank {
-	float: none;
-	display: inline-block;
-	margin-right: 10px;
-	width: 20px;
-	height: 20px;
-	line-height: 20px;
-	background: #8EB9F5; /* 809EC7*/
-	color: #fff;
-	text-align: center;
+  float: none;
+  display: inline-block;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  background: #8EB9F5; /* 809EC7*/
+  color: #fff;
+  text-align: center;
 }
 
-.sugar .panel .item{
-	padding:10px;
+.sugar .panel .item {
+  padding:10px;
 }
+
 /* 增加剧集 begin */
 .sugar .progress {
-	padding: 0 10px;
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
+  padding: 0 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
+
+.sugar .eps {
+  margin-top: 1em;
+}
+
 .sugar .episode {
-	float: left;
-	margin-right: 3px;
+  float: left;
+  margin-right: 3px;
 
-	background-color: #1A67CB; /* FF7800: 橘黄色来自腾讯; 1A67CB: 深蓝色来自优酷 */
-	background: linear-gradient(top, #2d8de2, #2784d9);
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(#2d8de2), to(#2784d9));
-	background: -moz-linear-gradient(top, #2d8de2, #2784d9);
-	background: -o-linear-gradient(top, #2d8de2, #2784d9);
-	background: -ms-linear-gradient(top, #2d8de2, #2784d9);
+  background-color: #1A67CB; /* FF7800: 橘黄色来自腾讯; 1A67CB: 深蓝色来自优酷 */
+  background: linear-gradient(top, #2d8de2, #2784d9);
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#2d8de2), to(#2784d9));
+  background: -moz-linear-gradient(top, #2d8de2, #2784d9);
+  background: -o-linear-gradient(top, #2d8de2, #2784d9);
+  background: -ms-linear-gradient(top, #2d8de2, #2784d9);
 
-	color: #FFF;
-	min-width: 23px;
-	text-align: center;
-	border-radius: 3px;
-	font-size: 14px;
-	line-height: 25px;
-	padding: 0 3px;
-	font-family: calibri; /* 防止consolas字体间距太大 */
+  color: #FFF;
+  min-width: 23px;
+  text-align: center;
+  border-radius: 3px;
+  font-size: 14px;
+  line-height: 25px;
+  padding: 0 3px;
+  font-family: calibri; /* 防止consolas字体间距太大 */
 }
 .sugar .eps-info {
-	clear: left;
-	line-height: 1.5;
-	padding: 5px 10px;
+  clear: left;
+  line-height: 1.5;
+  padding: 5px 10px;
 }
 
 .sugar .episode:hover {
-	text-decoration: none;
-	color: #fff;
+  text-decoration: none;
+  color: #fff;
 }
 /* 增加剧集 end */
 .sugar .panel .item .thumb{
-	float:left;
-	width:70px; height:105px;
-	margin-right: 10px;
-	background: #999;
+  float:left;
+  width:70px; height:105px;
+  margin-right: 10px;
+  background: #999;
 }
 
 .sugar .title a{
-	color:#000;
-	font-weight:bold;
-	font-size:14px;
-	overflow:hidden;
+  color:#000;
+  font-weight:bold;
+  font-size:14px;
+  overflow:hidden;
 }
 
 .item .title,
 .item .pub,
 .item .actor,
 .item .period {
-	line-height: 19px;
-	color: #909090;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+  line-height: 19px;
+  color: #909090;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .item .play{
-	margin-top:5px;
+  margin-top:5px;
 }
 .item .play em{
-	font-style:normal;
+  font-style:normal;
 }
 .sugar .btn_play_s{
-	display:inline-block;
-	height:22px; line-height:21px; *line-height:24px;
-	padding:0 10px;
-	border:1px solid #1a67cb;
-	color:#fff;
-	text-decoration:none;
-	_height:18px;
-	_padding-top:4px;
-	background:#2887db;
-	background:-webkit-gradient(linear, 0 0, 0 100%, from(#2d8de2), to(#2784d9));
-	background:-moz-linear-gradient(top, #2d8de2, #2784d9);
-	background:-o-linear-gradient(top, #2d8de2, #2784d9);
-	background:-ms-linear-gradient(top, #2d8de2, #2784d9);
-	border-radius:3px;
-	box-shadow:inset 0 1px 0 #3e9ced;
+  display:inline-block;
+  height:22px; line-height:21px; *line-height:24px;
+  padding:0 10px;
+  border:1px solid #1a67cb;
+  color:#fff;
+  text-decoration:none;
+  _height:18px;
+  _padding-top:4px;
+  background:#2887db;
+  background:-webkit-gradient(linear, 0 0, 0 100%, from(#2d8de2), to(#2784d9));
+  background:-moz-linear-gradient(top, #2d8de2, #2784d9);
+  background:-o-linear-gradient(top, #2d8de2, #2784d9);
+  background:-ms-linear-gradient(top, #2d8de2, #2784d9);
+  border-radius:3px;
+  box-shadow:inset 0 1px 0 #3e9ced;
 }
 .sugar .btn_play_s:hover{
-	text-decoration:none;
-	color:#fff;
+  text-decoration:none;
+  color:#fff;
 }
 .sugar .btn_play_s .ico_play{
-	vertical-align:top;
-	margin:6px -8px 0 5px;
-	*margin-top:2px;
+  vertical-align:top;
+  margin:6px -8px 0 5px;
+  *margin-top:2px;
 }
 
 .sugar .ico_play{
-	display:inline-block;
-	width:0; height:0;
-	line-height:0;
-	font-size:0;
-	overflow:hidden;
-	border-width:5px;
-	border-style:dashed dashed dashed solid;
-	border-color:transparent transparent transparent #fff;
+  display:inline-block;
+  width:0; height:0;
+  line-height:0;
+  font-size:0;
+  overflow:hidden;
+  border-width:5px;
+  border-style:dashed dashed dashed solid;
+  border-color:transparent transparent transparent #fff;
 }
 
 .sugar .footer {
-	color: #909090;
-	float: right;
-	margin: -20px 11px 0 0;
-	font-style: italic;
-	font-size: 12px;
-	position: relative;
+  color: #909090;
+  float: right;
+  margin: -20px 11px 0 0;
+  font-style: italic;
+  font-size: 12px;
+  position: relative;
 }
 
 .sugar .arrow {
-	width: 20px;
-	height: 20px;
-	position: absolute;
+  width: 20px;
+  height: 20px;
+  position: absolute;
   left: 68%;
-	background: url(../images/common/right-arrow.png) no-repeat;
-	margin: 4px 0;
-	text-indent: 2em;
-	overflow: hidden;
+  background: url(../images/common/right-arrow.png) no-repeat;
+  margin: 4px 0;
+  text-indent: 2em;
+  overflow: hidden;
 }

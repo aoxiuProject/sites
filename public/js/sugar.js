@@ -10,7 +10,7 @@
     encURIComp = win.encodeURIComponent,
     id = document.getElementById.bind(document),
 
-    prevInput = '' + Math.random(),
+    prevInput = String(Math.random()),
     prevFlag = 'baidu',
     input = id('display-search-kw'),
     $sugar = $('#sugar'),
@@ -20,15 +20,14 @@
     MAX_SUGAR_COUNT = 10,
 
     sugar = {
-      'baidu': makeBaiduSuggestionUrl, // 百度搜索 百度
-      'youku':  makeYoukuSuggestionUrl,
-      'sohu': makeSohuSuggestionUrl,
+      baidu: makeBaiduSuggestionUrl, // 百度搜索 百度
+      youku:  makeYoukuSuggestionUrl,
+      sohu: makeSohuSuggestionUrl,
     },
 
     youkuSearchUrl = 'http://www.soku.com/v?keyword=',
 
     baiduSugar = 'http://suggestion.baidu.com/su?ie=utf-8&json=1&p=3&cb=legend.cb.handleBaiduSuggestion&wd=',
-    youdaoSugar = 'http://dsuggest.ydstatic.com/suggest/suggest.s?query=',
     sohuSugar = 'http://tip.tv.sohu.com/s?callback=legend.cb.handleSohuSuggestion&encode=utf-8&key=',
     cb = legend.cb = legend.cb || {}; // 所有的jsonp回调函数挂载于此
 
@@ -39,13 +38,14 @@
     $node.addClass('hidden');
   }
   function isHidden($node) {
-      return $node[0].className.indexOf('hidden') !== -1;
+    return $node[0].className.indexOf('hidden') !== -1;
   }
 
   function fillDetails(d) {
     if (!d) {
-      return ;
+      return;
     }
+
     var infos = d.infos;
     if (infos.some((info) => !!info)) {
       var item = '',
@@ -127,15 +127,15 @@
   }
   // 设置推荐来自哪里
   function expandFirstPicItem() {
-      $sugar.find('li').has('.panel').first().addClass('cur');
+    $sugar.find('li').has('.panel').first().addClass('cur');
   }
 
   const setSugarFooter = (function () {
     const _footerLink = id('sg-footer-link');
     const _sgHosts = {
-      'baidu': ['百度搜索', 'http://www.baidu.com/'],
-      'youku': ['优酷视频', 'http://www.youku.com/'],
-      'sohu': ['搜狐视频', 'http://tv.sohu.com/'],
+      baidu: ['百度搜索', 'http://www.baidu.com/'],
+      youku: ['优酷视频', 'http://www.youku.com/'],
+      sohu: ['搜狐视频', 'http://tv.sohu.com/'],
     };
 
     return function (host) {
@@ -273,8 +273,10 @@
     var infos = arrayOf({}, MAX_SUGAR_COUNT);
     var desc = null, sohuSearchUrl = 'http://so.tv.sohu.com/mts?wd=',
       playLink, serial, prompt,
-      types = {'100':'电影', '101':'电视剧', '106':'综艺',
-      '115':'动漫', '121':'音乐', '200': '人物'},
+      types = {
+        '100': '电影', '101': '电视剧', '106': '综艺',
+        '115': '动漫', '121': '音乐', '200': '人物',
+      },
       type,
       episodes,
       serialRecent,
@@ -326,10 +328,10 @@
         if (episodes) {
           infos[i].episodes = [];
           for (var epsIndex = 0, epsLen = episodes.length; epsIndex < epsLen; ++epsIndex) {
-              infos[i].episodes.push({
-              'num': episodes[epsIndex].no,
-              'desc': episodes[epsIndex].t,
-              'url': episodes[epsIndex].u
+            infos[i].episodes.push({
+              num: episodes[epsIndex].no,
+              desc: episodes[epsIndex].t,
+              url: episodes[epsIndex].u
             });
           }
         }
@@ -339,7 +341,7 @@
     //console.log('items');console.log(items);
     titles.link = imgs.link;
 
-    var videoInfor = hasPic? {'imgs': imgs, 'titles': titles, 'infos': infos}: null;
+    var videoInfor = hasPic? { imgs: imgs, titles: titles, infos: infos }: null;
     var q = sg.q;
     var hasInitialSuggestions = (items.length === MAX_SUGAR_COUNT && q === '');
     handleSuggestion('sohu', items, q, hasInitialSuggestions, videoInfor);
@@ -348,10 +350,10 @@
     return key ? baiduSugar + encURIComp(key): '';
   }
   function makeYoukuSuggestionUrl(key) {
-    return 'http://tip.soku.com/search_'+(key?'keys':'yun')+'?jsoncallback=legend.cb.handleYoukuSuggestion&query='+encURIComp(key)+'&site=2&t='+(new Date().getTime());
+    return 'http://tip.soku.com/search_' + (key ? 'keys' : 'yun') + '?jsoncallback=legend.cb.handleYoukuSuggestion&query=' + encURIComp(key) + '&site=2&t=' + (new Date().getTime());
   }
   function makeSohuSuggestionUrl(key) {
-    return sohuSugar + encURIComp(key) + (key? '': '&top=1');
+    return sohuSugar + encURIComp(key) + (key ? '' : '&top=1');
   }
   // 如果有键按下和单击（适应优酷，搜狐）输入框，调用接口
   function callSuggest(host) {
@@ -398,7 +400,7 @@
       }
 
       sugarTimer = setTimeout(function () {
-          callSuggest(getSearchHost());
+        callSuggest(getSearchHost());
       }, 350);
     },
     keydown: function (e) {
