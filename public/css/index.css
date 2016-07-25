@@ -58,6 +58,7 @@ a {text-decoration:none;}
   width: 72%;
   margin: 2em auto;
   font-size: 20px;
+  text-align: center;
 }
 
 .titles {
@@ -74,8 +75,12 @@ a {text-decoration:none;}
 .headers td { padding: 6px 0px; }
 
 .headers .search-bar {
-  margin-left: 13%;
   margin-top: 20%;
+  text-align: left;
+}
+
+.headers form {
+  white-space: nowrap;
 }
 
 .titles,
