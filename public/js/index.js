@@ -133,6 +133,9 @@
       const matches = href.match(reg1);
       const domain1 = matches[1];
       const value = displayInput.value.trim();
+
+      // 如果匹配的第1个参数不是www 直接从url取，否则从url取匹配的第2个参数
+      // 因为有时候一个参数没法分清哪个url，比如 http://www.youku.com/ 和 http://www.baidu.com/s，匹配的第1个参数都是www，此时无法区分，只能比较第2个参数，youku和baidu，这时候区分开了。。。
       const host = domain1 !== 'www' ? urls[domain1] : urls[matches[2]];
 
       if (!host.word) return;
